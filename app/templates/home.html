@@ -1,0 +1,20 @@
+{% block title %}
+<!-- Home -->
+{% endblock %}
+
+{% block content %}
+<body>
+    {% for node in catalog.items() %}
+        <div>Node: {{ node[0] }}</div>
+        {% for key, item in node[1].items() %}
+            <ul>
+                {{ key }}
+                {% for i in item %}
+                    <ul>{{ i }}: {{ item[i] }}</ul>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        <br/><br/>
+    {% endfor %}
+</body>
+{% endblock %}
